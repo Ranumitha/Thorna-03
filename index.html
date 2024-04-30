@@ -1,0 +1,597 @@
+
+<!Doctype html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ranumitha Thorna 02</title>
+    <script src="js/notiflix-aio-2.7.0.min.js"></script>
+    <img class="all" id="gif-1" src="360_F_765410453_flqGhStFh9SJZjlkgoYHBmnCiHHKa5pF.jpg" style="
+    top: 10px;
+    left: 500px;
+    width: 100px;
+    height: 100px;
+    z-index: 10;">
+    <center><h1 style="font-size:300%;">Create BY: Ranumitha Vithanage</h1></center>
+   
+    <style>
+        #myDiv {
+        text-align: center;
+        height: auto;
+        margin: 0 auto;
+        width: 1000px;
+        padding-top: 0px;
+        padding-left: 20px;
+        }
+        body{
+        background: #000;
+        background-image: url(buddha-purnima-holiday-background-vector-illustration_118124-27767.avif);
+       background-size: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 5vw;
+        }
+        .all{
+        float: left;
+        position: absolute;
+        margin: 0 auto;
+        }
+        /*Eliminates padding, centers the thumbnail */
+        body, html {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        }
+        /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+        .lightbox-target {
+        z-index: 130;
+        position: fixed;
+        top: -100%;
+        width: 100%;
+        background: rgba(0,0,0,.7);
+        width: 100%;
+        opacity: 0;
+        -webkit-transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -o-transition: opacity .5s ease-in-out;
+        transition: opacity .5s ease-in-out;
+        overflow: hidden;
+        }
+        /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+        .lightbox-target img {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left:0;
+        right:0;
+        bottom: 0;
+        max-height: 0%;
+        max-width: 0%;
+        box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+        box-sizing: border-box;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        }
+        /* Styles the close link, adds the slide down transition */
+        a.lightbox-close {
+        display: block;
+        width: 120px;
+        height: 120px;
+        box-sizing: border-box;
+        background: white;
+        color: black;
+        text-decoration: none;
+        position: absolute;
+        top: -80px;
+        right: 25px;
+        border: solid 3px #f00;
+        border-radius: 80px;
+        padding: 0px;
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        margin-top: 30px;
+        }
+        /* Provides part of the "X" to eliminate an image from the close link */
+        a.lightbox-close:before {
+        content: "";
+        display: block;
+        height: 80px;
+        width: 5px;
+        background: black;
+        position: absolute;
+        left: 55px;
+        top: 15px;
+        -webkit-transform: rotate(
+        45deg
+        );
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(
+        45deg
+        );
+        }
+        /* Provides part of the "X" to eliminate an image from the close link */
+        a.lightbox-close:after {
+        content: "";
+        display: block;
+        height: 80px;
+        width: 5px;
+        background: black;
+        position: absolute;
+        left: 55px;
+        top: 15px;
+        -webkit-transform: rotate(
+        -45deg
+        );
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(
+        -45deg
+        );
+        }
+        /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+        .lightbox-target:target {
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+        }
+        .lightbox-target:target img {
+        max-height: 780px;
+        max-width: 100%;
+        padding: 0;
+        }
+        .lightbox-target:target a.lightbox-close {
+        top: 0px;
+        }
+        .button {
+        display: block;
+        font-size: 22px;
+        text-align: center;
+        line-height: 40px;
+        text-decoration: none;
+        color: white;
+        background-color: #E93219;
+        border-radius: 40px;
+        padding: 30px;
+        position: relative;
+        width: 320px;
+        top: 300px;
+        height: 30px;
+        margin-top: -22px;
+        text-shadow: 0 -1px -1px #af3a2a;
+        -moz-box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgb(0 0 0 / 40%);
+        box-shadow: 0 4px 0 #af3a2a, 0 5px 5px 1px rgb(0 0 0 / 40%);
+        -moz-transition: all 0.15s ease-in-out;
+        -o-transition: all 0.15s ease-in-out;
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        }
+        .button:hover {
+        background-color: #d25544;
+        text-shadow: 0 -1px -1px #c4402f;
+        -moz-box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+        -webkit-box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 4px 0 #c4402f, 0 5px 5px 1px rgba(0, 0, 0, 0.4);
+        }
+        .button:active {
+        margin-top: -18px;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        }
+        #showBtn{
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+<body>
+    <div id="moon" style="padding-top: 45vh;">
+        <div class='peeek-loading'> 
+            <img id="loading-image" src="images/prel.gif" alt="Loading..." />
+        </div>
+    </div>
+ <div id="showBtn" style="display: none;">
+        <img src="landing_text_2.png" style="
+            position: relative;
+            top: 265px;
+            width: 380px;
+            ">
+        <a href="#" class="button" onclick="showLights()"><img src="landing_text_2.png" style="
+            width: 100%;
+            "></a>
+    </div>             
+    <div id="myDiv" style="display: none;">
+        <div style="width: 100%;position: relative;">
+
+            <img class="all" id="gif-1" src="4.gif" style="
+                top: 400px;
+                left: 95px;
+                width: 324px;
+                height: 310px;
+                z-index: 10;">
+        
+        
+            <img class="all" id="gif-2" src="4 (1).gif" style="
+                top: 400px;
+                right: 650px;
+                width: 484px;
+                height: 331.5px;
+                z-index: 5;">
+         
+            <img class="all" id="gif-3" src="4 (2).gif" style="
+                top: 245px;
+                left: 60px;
+                width: 265px;
+                height: 275px;
+                z-index: 4;">
+     
+            <img class="all" id="gif-4-5" src="4 (3).gif" style="
+                top: 100px;
+                left: 130px;
+                width: 280px;
+                height: 360px;
+                z-index: 3;">
+         
+      
+  
+            <img class="all" id="gif-6" src="4 (4).gif" style="
+                top: 40px;
+                left: 235px;
+                width: 286px;
+                height: 185.5px;
+                z-index: 2;">
+        
+         
+
+            <img class="all" id="gif-7-8" src="4 (5).gif" style="
+                top: 0px;
+                left: 200px;
+                right: 230px;
+                width: 386px;
+                height: 456px;
+                z-index: 4;">
+          
+            </a> 
+            <img class="all" id="gif-9" src="4 (6).gif" style="
+                top: 40px;
+                right: 260px;
+                width: 286px;
+                height: 185.5px;
+                z-index: 2;">
+            <img class="all" id="gif-10-11" src="4 (7).gif" style="
+                top: 100px;
+                right: 150px;
+                width: 280px;
+                height: 360px;
+                z-index: 3;">
+           
+            <img class="all" id="gif-12" src="4 (8).gif" style="
+                 top: 245px;
+                right: 83px;
+                width: 265px;
+                height: 275px;
+                z-index: 4;">
+  
+            <img class="all" id="gif-13" src="4 (9).gif" style="
+                top: 400px;
+                left: 620px;
+                width: 484px;
+                height: 331px;
+                z-index: 5;">
+            <img class="all" id="gif-14" src="4 (10).gif" style="
+                top: 400px;
+                right: 120px;
+                width: 324px;
+                height: 310px;
+                z-index: 10;">
+           
+            
+            <img class="all main-gif" id="gif-main" src="3 (2).gif" style="
+                top: 200px;
+                left: 200px;
+                right: 230px;
+                width: 449.5px;
+                height: 443.5px;
+                z-index: 14;">
+
+<img class="all" src="buddha.png" style="
+
+top: 274px;
+
+left: 0px;
+
+width: 960px;
+
+height: 540px;
+
+z-index: 55;">
+<img class="all " id="gif-17" src="Screenshot 2024-04-29 145212.png"style="
+top: 695px;
+left: 120px;
+right: 200px;
+height: auto;
+width: 500px;
+z-index: 4;">
+
+
+
+
+ 
+        </div>
+    </div>
+
+    <script>
+        let defaultPlayer = document.getElementById("intro_audio");
+        
+        let storyPlayer = document.getElementById("story_audio");
+        
+        let gifList = ["gif-1","gif-2","gif-3","gif-4-5","gif-6","gif-7-8","gif-9","gif-10-11","gif-12","gif-13","gif-14","gif-15","gif-16","gif-main"];
+        
+        let foldList = ["1","2","3","4-5","6","7-8","9","10-11","12","13","14","15","16","round"];
+        
+        let currentIndex;
+        
+        let currentGifIndex = 1;
+        
+        let sound = true;
+        
+        
+        
+        document.onreadystatechange = function() {
+        
+          if (document.readyState !== "complete") {
+        
+            document.querySelector("body").style.visibility = "hidden";
+        
+            document.querySelector("#moon").style.visibility = "visible";
+        
+          }
+        
+          else {
+        
+            document.querySelector("#moon").style.display = "none";
+        
+            document.querySelector("body").style.visibility = "visible";
+        
+            document.querySelector("#showBtn").style.display = "block";
+        
+          }
+        
+        }
+        
+        
+        
+        function autoPlayAudio(){
+        
+          defaultPlayer.load();
+        
+          defaultPlayer.play();
+        
+        }
+        
+        
+        
+        function changeGif(){
+        
+          for(let i=0; i < gifList.length; i++){
+        
+              document.getElementById(gifList[i]).src = "gifs/" + foldList[i] + "/" + currentGifIndex + ".gif";
+        
+          }
+        
+          currentGifIndex = currentGifIndex + 1;
+        
+        }
+        
+        
+        
+        function storyAudioStop(){
+        
+          storyPlayer.pause();
+        
+          storyPlayer.currentTime = 0;
+        
+        }
+        
+        
+        
+        function toggleSound(){
+        
+          if(sound){
+        
+            document.getElementById("soundButton").src = "images/sound-cut.png";
+        
+            sound = false;
+        
+            defaultPlayer.muted = true;
+        
+          }
+        
+          else{
+        
+            document.getElementById("soundButton").src = "images/sound.png";
+        
+            sound = true;
+        
+            defaultPlayer.muted = false;
+        
+          }
+        
+        }
+        
+        
+        
+        defaultPlayer.addEventListener("play", function () {
+        
+          if(!storyPlayer.paused){
+        
+            storyAudioStop();
+        
+          }
+        
+        });
+        
+        
+        
+        function showLights(){
+        
+          let state;
+        
+          if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)){ 
+        
+            let ieversion = new Number(RegExp.$1);
+        
+            if (ieversion <= 7){
+        
+              state = false;
+        
+            }
+        
+            else{
+        
+              state = true;
+        
+            }
+        
+          }
+        
+        
+        
+          if(state == true || state == undefined){
+        
+            document.getElementById("showBtn").style.display = "none";
+        
+            document.getElementById("myDiv").style.display = "block";
+        
+            document.getElementById("structure").style.display = "block";
+        
+            autoPlayAudio();
+        
+        
+        
+            setInterval(function(){
+        
+              if(currentGifIndex <= 4 ){
+        
+                changeGif();
+        
+              }
+        
+              else{
+        
+                currentGifIndex = 1;
+        
+                changeGif();
+        
+              }
+        
+            }, 15000);
+        
+          }
+        
+          else{
+        
+            Notiflix.Report.Failure("Error","Please Change Your Browser","Ok");
+        
+          }
+        
+        }
+        
+        
+        
+        storyPlayer.addEventListener("ended", function(){
+        
+          next();
+        
+        });
+        
+        
+        
+        function setTrack(value){
+        
+          let source = document.getElementById('audioSource');
+        
+          let audio = "audio/" + value + ".mp3";
+        
+          source.src = audio;
+        
+          storyPlayer.load();
+        
+          storyPlayer.play();
+        
+        }
+        
+        
+        
+        function loadAudio(value){
+        
+          currentIndex = parseInt(value);
+        
+          if(!defaultPlayer.paused){
+        
+            defaultPlayer.pause();
+        
+          }
+        
+          setTrack(value);
+        
+        }
+        
+        
+        
+        function closeLightBox(){
+        
+          storyAudioStop();
+        
+          defaultPlayer.play();
+        
+        }
+        
+        
+        
+        function openLast(){
+        
+          currentIndex = 11;
+        
+          storyAudioStop();
+        
+          setTrack("EXTRO");
+        
+        }
+        
+        
+        
+        function next(){
+        
+          currentIndex = currentIndex + 1;
+        
+          let number = "0" + currentIndex;
+        
+          if(currentIndex < 14){
+        
+            document.getElementById(number).firstElementChild.click();     
+        
+          }
+        
+          else{
+        
+            document.querySelector(".lightbox-close").click();
+        
+          }
+        
+        }
+        
+        
+        
+
+        
+    </script>
+</body>
+</html>
